@@ -14,11 +14,11 @@
 
 1800-180F     6522 VIA: I/0 to computer
 
-1COO-1COF     6522 VIA: I/O to disk controller
+1C00-1C0F     6522 VIA: I/O to disk controller
 
 ### Disk Operating System ROM
 
-C1OO-F258     Interface Processor: receive & interpret commands from computer
+C100-F258     Interface Processor: receive & interpret commands from computer
 
 F259-FE66     Floppy Disk Controller: executes IP's commands, controls mechanism
 
@@ -26,7 +26,7 @@ FE67-FE84     IRQ handler: switches from lP to FDC & back every 10 ms.
 
 FE85-FEE6     ROM tables & constants
 
-FEE7-FFOF     Patch area
+FEE7-FF0F     Patch area
 
 FFE6-FFFF     JMP table: User command vectors 
 
