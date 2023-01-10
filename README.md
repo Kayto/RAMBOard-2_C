@@ -110,7 +110,7 @@ https://www.protovision.games/shop/
 
 ## Programming
 
-See the Software folder for any work in progress.
+See the Software folder **[here](https://github.com/Kayto/RAMBOard-2_C/tree/main/Software)** for any work in progress.
 
 
 ## Next Steps
