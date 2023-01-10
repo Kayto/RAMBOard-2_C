@@ -108,11 +108,16 @@ You sure? Modern boards do appear now and again for purchase.
 
 https://www.protovision.games/shop/
 
+## Programming
+
+See the Software folder for any work in progress.
+
+
 ## Next Steps
 
 Some ideas for further work.
 
-- [ ] Collate some software examples that utilise the RAMBOard
+- [ ] Collate some software examples that utilise the RAMBOard (see programming section for the work in progress).
 - [ ] Utilise more RAM blocks
 - [ ] Rationalise the board layout and jumpers
 - [ ] Fix the mistake at JP1.
