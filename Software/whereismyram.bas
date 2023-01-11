@@ -1,6 +1,6 @@
 10 rem * checks for additional 1541 drive ram
 20 rem * and at what address.
-30 rem * starts at $2000 and checks 2K blocks
+30 rem * starts at $2000 and checks 2k blocks
 40 rem * to $a000.
 50 rem * by https://github.com/kayto/
 60 rem * code needs a bit of work to display $a000 ;)
@@ -14,9 +14,9 @@
 140 print"trying $ a0 00"
 150 a=123
 160 for i= 0 to 15: rem * runs 15 passes until failure
-170 lo=lo+1:a=a+5
+170 lo=lo+1:a=a+1
 180 rem print"writing value:";a;"to drive memory"
-190 print#15,"m-w"chr$(lo)chr$(hi)chr$(1)chr$(A)
+190 print#15,"m-w"chr$(lo)chr$(hi)chr$(1)chr$(a)
 200 print#15, "m-r"chr$(lo)chr$(hi)
 210 get#15,g$:if g$="" then g$=chr$(0) 
 220 g=asc(g$)
