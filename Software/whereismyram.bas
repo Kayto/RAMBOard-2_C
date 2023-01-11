@@ -6,15 +6,15 @@
 60 rem * code needs a bit of work to display $a000 ;)
 70 print"standby, finding drive ram"
 80 open 15,8,15
-90 hi=0:lo=0
+90 hi=0:lo=1
 100 for b= 0 to 4
 110 hi=hi+32: rem start at $2000 in drive memory
 120 if hi=160 then goto 140
 130 print"trying $";(hi/1.6);"00":goto 150
 140 print"trying $ a0 00"
-150 a=123
-160 for i= 0 to 15: rem * runs 15 passes until failure
-170 lo=lo+1:a=a+1
+150 a=111
+160 for i= 0 to 9: rem * runs 10 passes until failure
+170 a=a+5
 180 rem print"writing value:";a;"to drive memory"
 190 print#15,"m-w"chr$(lo)chr$(hi)chr$(1)chr$(a)
 200 print#15, "m-r"chr$(lo)chr$(hi)
