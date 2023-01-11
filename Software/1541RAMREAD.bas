@@ -1,3 +1,5 @@
+05 rem * Based on code within the 1541-II user guide
+06 rem * modified to allow address input as HEX
 10 open 15,8,15
 20 input"# of bytes to read (o=end)";NL
 30 if NL<1 then close 15:end
