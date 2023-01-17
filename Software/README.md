@@ -16,8 +16,6 @@ I have provided a summary page with some useful information and links to guides,
 
 **[Sources and credits](sources/README.md)**
 
-Please take a look [here]
-
 ## Examples
 
 Some examples are collated that I have been using and developing to specifically test the RAMBOard.
