@@ -14,7 +14,7 @@ I have provided a summary page with some useful information and links to guides,
 
 **[Useful info](USEFULINFO.md)**
 
-**[Sources and credits](sources/README.md)**
+**[Sources and credits](https://github.com/Kayto/RAMBOard-2_C/tree/main/Sources)**
 
 Please take a look [here]
 
@@ -24,7 +24,7 @@ Some examples are collated that I have been using and developing to specifically
 | Name  | Description |
 |----------|:-------------|
 | **[WHEREISMYRAM.bas](whereismyram.bas)** | This BASIC program runs through and checks 2K blocks of RAM. |
-|**1541RAMREAD.bas**| This BASIC program list the contents of a particular area of drive ROM/RAM. Useful to check wheher the code you want is actually there. |
+| **[1541RAMREAD.bas](1541RAMREAD.bas)** | This BASIC program list the contents of a particular area of drive ROM/RAM. Useful to check whether the code you want is actually there. |
 
 
 
