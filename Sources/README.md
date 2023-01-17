@@ -1,14 +1,11 @@
 ## Sources
 
 ### Books
-
-**Inside Commodore DOS: The Complete Guide to the 1541 Disk Operating System**
-by Gerald G. Neufeld, Richard Immers, Diane M. Corralejo (Illustrator)
-
-**Commodore 1541-II Disk Drive Users Guide** (1986)(Commodore)
-
-**The Anatomy of the 1541 Disk Drive: A Complete Guide to Using the Commodore Disk Drive**
-by Lothar Englisch and Norbert Szcepanowski
+| Title | Author | Archived|
+|:----------|:-------------|----|
+|**Inside Commodore DOS: The Complete Guide to the 1541 Disk Operating System**| by Gerald G. Neufeld, Richard Immers, Diane M. Corralejo (Illustrator)|No|
+|**Commodore 1541-II Disk Drive Users Guide** |(1986)(Commodore)|No|
+|**The Anatomy of the 1541 Disk Drive: A Complete Guide to Using the Commodore Disk Drive**|by Lothar Englisch and Norbert Szcepanowski|No|
 
 ### Online
 
