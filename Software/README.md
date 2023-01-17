@@ -10,7 +10,7 @@ If you want to skip the below and see a more exciting example of "drive code" th
 
 ### Sources
 
-I have provided a summary page with some useful information and links to guides, books and articles about drive coding. Some of the information is not maintained any more, so where it seems to be at risk of disappearing I have archived it here. Original credits and sources will be linked.
+I have provided a summary page with some useful information and links to guides, books and articles about drive coding and the RAMBOard. Some of the information is not maintained any more, so where it seems to be at risk of disappearing I have archived it here. Original credits and sources will be linked.
 
 **[Useful info](USEFULINFO.md)**
 
