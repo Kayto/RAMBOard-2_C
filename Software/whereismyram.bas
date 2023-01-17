@@ -29,8 +29,8 @@
 280 print
 290 next b
 300 close 15:end
-310 OPEN 15,8,15 : REM THE OPEN COMMAND CHANNEL
-500 INPUT#15,EN,EM$,ET,ES : REM INPUT THE ERROR STATUS
-510 IF EN < 20 THEN RETURN : REM NO ERROR ENCOUNTERED
-520 PRINT EN;EM$;ET;ES : goto 65:REM PRINT THE ERROR STATUS ON SCREEN
-530 CLOSE 15 : END : REM ABORT ON BAD STATUS
+310 open 15,8,15 : rem the open command channel
+500 input#15,en,em$,et,es : rem input the error status
+510 if en < 20 then return : rem no error encountered
+520 print en;em$;et;es : goto 65:rem print the error status on screen
+530 close 15 : end : rem abort on bad status 
