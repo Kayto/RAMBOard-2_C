@@ -3,7 +3,7 @@
 10 open 15,8,15
 20 input"# of bytes to read (o=end)";nl
 30 if nl<1 then close 15:end
-40 if nl>255 then 20
+40 if nl>256 then 20
 50 input "enter starting address as hex";h$
 55 print " "
 60 ad=0
