@@ -3,34 +3,37 @@
 30 rem *starts at $2000 and checks 
 40 rem *2k blocks to $a000.
 50 rem *by https://github.com/kayto/
-60 gosub 310
-65 print:close 15
-70 print"standby, finding drive ram"
-80 open 15,8,15
-90 hi=0:lo=1
-100 for b= 0 to 4
-110 hi=hi+32: rem start at $2000 in drive memory
-120 if hi=160 then goto 140
-130 print" trying $";(hi/1.6);"00":goto 150
-140 print" trying $ a0 00"
-150 a=111
-160 for i= 0 to 9: rem * runs 10 passes until failure
-170 a=a+5
-180 rem print"writing value:";a;"to drive memory"
-190 print#15,"m-w"chr$(lo)chr$(hi)chr$(1)chr$(a)
-200 print#15, "m-r"chr$(lo)chr$(hi)
-210 get#15,g$:if g$="" then g$=chr$(0) 
-220 g=asc(g$)
-230 rem print "reading value:";g
-240 if g<>a then m$="not found":goto 270
-250 if g=a then m$="found"
-260 next i
-270 print" memory ";m$
-280 print
-290 next b
-300 close 15:end
-310 open 15,8,15 : rem the open command channel
-500 input#15,en,em$,et,es : rem input the error status
-510 if en < 20 then return : rem no error encountered
-520 print en;em$;et;es : goto 65:rem print the error status on screen
-530 close 15 : end : rem abort on bad status 
+60 a=0:lo=0:count=0
+70 print"{clear}"
+80 print"{white} where is my extra 1541 ram?{light blue}"
+90 print"{down}standby, finding drive ram...{down}"
+100 open 15,8,15 : rem the open command channel
+110 input#15,en,em$,et,es : rem input the error status
+120 print en;em$;et;es : goto 130:rem print the status on screen  
+130 rem open 15,8,15
+140 hi=0:if count=19 then hi=0
+150 for b= 0 to 4
+160 hi=hi+32: rem start at $2000 in drive memory
+170 if hi=160 then goto 190
+180 print" trying $";(hi/1.6*100):goto 200
+190 print" trying $ a000"
+200 for i= 0 to 25: rem * runs 25 passes until failure
+210 a=a+2:if a>255 then a=0:if lo>255 then lo=0
+220 print#15,"m-w"chr$(lo)chr$(hi)chr$(1)chr$(a)
+230 print#15, "m-r"chr$(lo)chr$(hi)
+240 get#15,g$:if g$="" then g$=chr$(0) 
+250 g=asc(g$)
+260 rem print "reading value:";g
+270 if g<>a then m$="not found":goto 310
+280 if g=a then m$="{white}{reverse on}found{reverse off}{light blue}"
+290 lo=lo+3:if lo>255 then lo=0
+300 next i
+310 print" memory ";m$
+320 print
+330 next b
+340 close15:input"check again y/n";y$
+350 count = count+1
+360 if y$="y"then a=a+2:rem increments data byte
+370 if y$="y"then hi=hi+1:rem increments high byte
+380 if y$="y" then lo=lo+25:goto 70:rem increments lo byte
+390 close15:end
