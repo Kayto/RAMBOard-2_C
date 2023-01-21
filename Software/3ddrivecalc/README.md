@@ -10,10 +10,15 @@ Currently I am trying to convert and compile original TASM code. The aim is to h
 
 #### Source code
 
-1. Original folder contains original soyrce and prg
-2. My hand corrections for TASM to KickASS - compiles but runs with errors
-3. My hand corrections for TASM within C64Studio - build fails on error below
+1. Original folder contains original source and prg
+2. My hand corrections for TASM to KickASS - compiles but runs with errors, looks like tape buffer
+3. My hand corrections for TASM within C64Studio - build fails on error below.
 
+**Item 2**
+
+garbage start screen, tape load?
+
+**Item 3**
 
 Error relates to the drive code address as follows;
 
