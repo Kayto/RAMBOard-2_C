@@ -6,7 +6,7 @@ One of which provided a use of the 1541 to undertake program calculations for a 
 
 Currently I am trying to convert and compile original TASM code. The aim is to have some working source code that I can use as a playground to mess around with memory locations and sizing within the 1541 and RAMBOard.
 
-First problem to solve is getting a workable source. 
+- [ ] First problem to solve is getting a workable source. 
 
 #### Source code
 
