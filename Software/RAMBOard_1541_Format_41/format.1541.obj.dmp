@@ -1,0 +1,92 @@
+00001  0000             ;- ========================================
+00002  0001             ;- PROJECT    RAMBOARD1541FORMAT 41 TRACKS ASM (CBM PRG STUDIO)
+00003  0001             ;- TARGET     COMMODORE 64
+00004  0001             ;- COMMENTS   ASM DRIVE CODE BASED ON 64'ER FORMAT41 ADAPTED AND COMMENTED
+00005  0001             ;-            BY ADAMT117, TO USE THE RAMBOARD.
+00006  0001             ;-            SAVE TO DISK AS FORMAT.1541.OBJ
+00007  0001             ;- AUTHOR     ADAMT117. HTTPS://GITHUB.COM/KAYTO
+00008  0001             ;- ========================================
+00009  0001             ;DRIVECODE
+00010  0001             *=$8000
+00011  8000  A5 43                 LDA            $43       ;NUMBER OF SECTORS PER TRACK FOR FORMATTING
+00012  8002  10 10                 BPL            B8014
+00013  8004  A9 00                 LDA            #$00
+00014  8006  85 44                 STA            $44       ;TEMP. WORK AREA; SCRATCH PAD
+00015  8008  AD 00 1C              LDA            $1C00     ;PB, CONTROL PORT B
+00016  800B  29 9F                 AND            #$9F
+00017  800D  8D 00 1C              STA            $1C00     ;PB, CONTROL PORT B
+00018  8010  A9 11                 LDA            #$11
+00019  8012  85 43                 STA            $43       ;NUMBER OF SECTORS PER TRACK FOR FORMATTING
+00020  8014  A5 40      B8014      LDA            $40       ;BYTE COUNTER FOR GCR CONVERSION
+00021  8016  C5 51                 CMP            $51       ;CURRENT TRACK NUMBER FOR FORMATTING [FF]
+00022  8018  D0 03                 BNE            B801D
+00023  801A  4C 00 FB              JMP            $FB00     ; CHECK FOR WRITE PROTECT TAB
+00024  801D  4C 96 FD   B801D      JMP            $FD96     ; ALL TRACK DONE;EXIT
+00025  8020  00                    BRK
+00026  8021  00                    BRK
+00027  8022  00                    BRK
+00028  8023  00                    BRK
+00029  8024  00                    BRK
+00030  8025  00                    BRK
+00031  8026  00                    BRK
+00032  8027  00                    BRK
+00033  8028  00                    BRK
+00034  8029  A0 06                 LDY            #$06      ;#$06
+00035  802B  AD 03 05              LDA            $0503     ;DISK ID, DRIVE 0
+00036  802E  85 12                 STA            $12
+00037  8030  AD 04 05              LDA            $0504
+00038  8033  85 13                 STA            $13
+00039  8035  20 07 D3              JSR            $D307     ;$D307 CLOSE ALL CHANNELS
+00040  8038  20 7C CC              JSR            $CC7C     ;LOAD .A WITH THE .Y TH CHARACTER FROM THE COMMAND STRING
+00041  803B  E0 01                 CPX            #$01
+00042  803D  F0 03                 BEQ            B8042
+00043  803F  4C 26 CC              JMP            $CC26     ;LOAD .A WITH $31 TO INDICATE A BAD COMMAND AND JMP TO CMDERR ($C1C8)
+00044  8042  AD 85 02   B8042      LDA            $0285     ;SECTOR OF A FILE
+00045  8045  85 0C                 STA            $0C       ;TRACK AND SECTOR FOR BUFFER 3
+00046  8047  A9 00                 LDA            #$00
+00047  8049  85 0D                 STA            $0D
+00048  804B  20 00 C1              JSR            $C100     ;$C100 TURN LED ON FOR CURRENT DRIVE
+00049  804E  24 6A                 BIT            $6A       ;NUMBER OF READ ATTEMPTS [5]
+00050  8050  30 08                 BMI            B805A
+00051  8052  A9 C0                 LDA            #$C0
+00052  8054  85 03                 STA            $03       ;COMMAND CODE FOR BUFFER 3
+00053  8056  A5 03      B8056      LDA            $03       ;COMMAND CODE FOR BUFFER 3
+00054  8058  30 FC                 BMI            B8056
+00055  805A  A9 A0      B805A      LDA            #$A0
+00056  805C  8D 21 80              STA            $8021
+00057  805F  A9 0F                 LDA            #$0F
+00058  8061  8D 22 80              STA            $8022
+00059  8064  A5 0C                 LDA            $0C       ;TRACK AND SECTOR FOR BUFFER 3
+00060  8066  85 51                 STA            $51       ;CURRENT TRACK NUMBER FOR FORMATTING [FF]
+00061  8068  A9 E0                 LDA            #$E0
+00062  806A  85 03                 STA            $03       ;COMMAND CODE FOR BUFFER 3
+00063  806C  A5 03      B806C      LDA            $03       ;COMMAND CODE FOR BUFFER 3
+00064  806E  30 FC                 BMI            B806C
+00065  8070  C9 02                 CMP            #$02
+00066  8072  90 05                 BCC            B8079
+00067  8074  A2 03                 LDX            #$03
+00068  8076  4C 0A E6              JMP            $E60A     ;$E60A PREPARE ERROR NUMBER AND MESSAGE
+00069  8079  E6 0C      B8079      INC            $0C       ;TRACK AND SECTOR FOR BUFFER 3
+00070  807B  AD 86 02              LDA            $0286
+00071  807E  C5 0C                 CMP            $0C       ;TRACK AND SECTOR FOR BUFFER 3
+00072  8080  B0 E2                 BCS            $8064
+00073  8082  60                    RTS
+00074  8083             
+
+******* 7 Label(s) *******
+b8014 = $8014 
+b801d = $801D 
+b8042 = $8042 
+b8056 = $8056 
+b805a = $805A 
+b806c = $806C 
+b8079 = $8079 
+
+******* 1 Unused label(s) *******
+b8014
+
+******* 1 Variable(s) *******
+tgt_c64  = $0001
+******* 1 Unused variables(s) *******
+tgt_c64
+
