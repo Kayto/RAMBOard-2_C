@@ -1,0 +1,40 @@
+00001  0000             *          =$0400
+00002  0400  A5 B4                 LDA $B4
+00003  0402  48                    PHA
+00004  0403  A5 B5                 LDA $B5
+00005  0405  48                    PHA
+00006  0406             
+00007  0406             ; SAVING THE VALUE $0300 TO $00B4 (LOW BYTE ORDER)
+00008  0406  A9 00                 LDA #$00
+00009  0408  85 B4                 STA $B4
+00010  040A  A9 03                 LDA #$03
+00011  040C  85 B5                 STA $B5
+00012  040E  A0 00                 LDY #$00
+00013  0410             ;ADDING 5 TO THE VALUE OF EVERY MEMORY ADDRESS FROM $0300 TO $0304
+00014  0410             LOOP
+00015  0410  18                    CLC
+00016  0411  A9 05                 LDA #$05
+00017  0413  71 B4                 ADC ($B4),Y
+00018  0415  71 B4                 ADC ($B4),Y
+00019  0417  C8                    INY
+00020  0418  C0 08                 CPY #$08
+00021  041A  D0 F4                 BNE LOOP
+00022  041C             ; RESTORING SAVED VALUES
+00023  041C  68                    PLA
+00024  041D  85 B5                 STA $B5
+00025  041F  68                    PLA
+00026  0420  85 B4                 STA $B4
+00027  0422             ;RETURN FROM SUBROUTINE
+00028  0422  60                    RTS
+00029  0423             
+
+******* 1 Label(s) *******
+loop = $0410 
+
+******* 0 Unused label(s) *******
+
+******* 1 Variable(s) *******
+tgt_c64  = $0001
+******* 1 Unused variables(s) *******
+tgt_c64
+
