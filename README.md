@@ -50,6 +50,7 @@ If only my coding skills were better - in the meantime I aim to collate some det
 ## Project Details
 
 * ### Schematics and board layout
+![](https://github.com/Kayto/RAMBOard-2_C/blob/main/Schematics/1541%20RAMBoard%20v001-1.jpg)
 
 The IC and track layout for the PCB and supporting schematics from KiCAD can be found **[here](Schematics/README.md)**.
 
