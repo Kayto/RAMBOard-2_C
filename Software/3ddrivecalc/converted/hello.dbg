@@ -1,0 +1,46 @@
+<C64debugger version="1.0">
+   <Sources values="INDEX,FILE">
+      0,KickAss.jar:/include/autoinclude.asm
+      1,C:\Users\adamt\Documents\GitHub\RAMBOard-2_C\Software\3ddrivecalc\converted\hello.asm
+   </Sources>
+
+   <Segment name="Default" dest="" values="START,END,FILE_IDX,LINE1,COL1,LINE2,COL2">
+      <Block name="BASIC Start">
+         $0800,$0800,1,23,9,23,13
+         $0801,$0802,1,24,9,24,13
+         $0803,$0804,1,25,9,25,13
+         $0805,$0805,1,26,9,26,13
+         $0806,$080c,1,27,9,27,13
+         $080d,$080f,1,28,9,28,13
+         $0810,$081f,1,40,15,40,19
+         $0820,$082c,1,43,14,43,18
+      </Block>
+      <Block name="Main Start">
+         $1000,$1002,1,50,9,50,11
+         $1003,$1004,1,54,9,54,11
+         $1005,$1006,1,55,9,55,11
+         $1007,$1009,1,56,9,56,11
+         $100a,$100b,1,59,9,59,11
+         $100c,$100e,1,61,9,61,11
+         $100f,$1010,1,62,9,62,11
+         $1011,$1013,1,63,9,63,11
+         $1014,$1014,1,64,9,64,11
+         $1015,$1017,1,65,9,65,11
+         $1018,$1018,1,68,9,68,11
+      </Block>
+   </Segment>
+
+   <Labels values="SEGMENT,ADDRESS,NAME,START,END,FILE_IDX,LINE1,COL1,LINE2,COL2">
+      Default,$0810,str_to_print,1,40,1,40,13
+      Default,$0820,str_to_poke,1,43,1,43,12
+      Default,$100c,DirectLoop,1,60,1,60,11
+      Default,$1018,Done,1,66,1,66,5
+   </Labels>
+
+   <Breakpoints values="SEGMENT,ADDRESS,ARGUMENT">
+   </Breakpoints>
+
+   <Watchpoints values="SEGMENT,ADDRESS1,ADDRESS2,ARGUMENT">
+   </Watchpoints>
+
+</C64debugger>
