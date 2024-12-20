@@ -6,7 +6,8 @@
 ;
 
 * =$8100
-; Start of the program at memory location $8100
+; Start of the program at memory location $8100 - this assumes a RAMBOard
+; if no RAMBOArd present then change to $0400, this uses the 1541 RAM buffer.
 
         lda $b4
         pha
@@ -15,6 +16,7 @@
 ; Save the current values of $b4 and $b5 (used for indirect addressing) onto the stack
 
 ; saving the value $0300 to $00b4 (low byte order)
+; the value $0300 relates to the memory address of the input/output numbers, this address is within the 1541 RAM buffer
         lda #$00
         sta $b4
         lda #$03
