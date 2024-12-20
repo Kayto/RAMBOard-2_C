@@ -1,7 +1,7 @@
 
 # Commodore 1541 Drive Code Addition
 
-This program loads and executes custom drive code on the Commodore 1541 disk drive. 
+The `dcadd.bas` BASIC program loads and executes custom drive code on the Commodore 1541 disk drive. 
 The `.obj` file is a binary object file containing the machine code to be executed on the 1541 drive.
 The code is a simple exampe that just takes input numbers and adds 5 to them.
 The memory location in the drive is defined in the .obj. In this example it uses $8100, which assume extra RAM is located in the drive.
