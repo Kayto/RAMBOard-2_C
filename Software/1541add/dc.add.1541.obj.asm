@@ -4,7 +4,28 @@
 ; and executes it to perform addition operations within the 1541 drive.
 ; The BASIC program uses direct access commands to load this code into the drive's memory and execute it.
 ;
-
+; MEMORY MAP
+; ** marks code and i/o location in 1541 memory
+; 1541 - 2K of RAM memory
+; +--------------------------------------------------------------------------------+
+; | Location  | Description                                                        |
+; |--------------------------------------------------------------------------------|
+; | 0000-00FF |    Zero page work area: job queue , important variables & pointers |
+; | 0100-0lFF |    Stack work area                                                 |
+; | 0200-02FF |    Command buffers & tables: channels, parser, output, variables   |
+; | 0300-07FF |    Data buffers 0-4, 1 per page of memory                          |
+; |--------------------------------------------------------------------------------|
+; | 0300-0307 |    ** USED for input and output numbers                            |
+; +--------------------------------------------------------------------------------+
+; 1541 - RAMBOard RAM memory - default location
+; +--------------------------------------------------------------------------------+
+; | Location  | Description                                                        |
+; |--------------------------------------------------------------------------------|
+; | 8000-9FFF |    Zero page work area: job queue , important variables & pointers |
+; |--------------------------------------------------------------------------------|
+; | 8100-8122 |    ** USED to store program                                        |
+; +--------------------------------------------------------------------------------+
+:
 * =$8100
 ; Start of the program at memory location $8100 - this assumes a RAMBOard
 ; if no RAMBOArd present then change to $0400, this uses the 1541 RAM buffer.
