@@ -24,9 +24,9 @@ The designs presented here are by others, the information I used is linked where
 
 * Chip Level Design for the original RAMBOard design.
 
-* Wolfgang Moser - his web page covering detail of the RAMBOard and including a reverse-engineered schematic. This forms the basis for my tinkering. http://d81.de/CLD-RAMBOard/RAMBOard-2C.shtml
+* Wolfgang Moser - his web page covering detail of the RAMBOard and including a reverse-engineered schematic. This forms the basis for my tinkering. https://web.archive.org/web/20250418195950/http://www.d81.de/CLD-RAMBOard/
 
-* Glenn Holmer for providing the original manual and installation photographs of the original board. https://www.lyonlabs.org/commodore/hardware/index.html
+* Glenn Holmer for providing the original manual and installation photographs of the original board. https://lyonlabs.lillianskinner.ca/commodore/hardware/index.html
 
 
 ## What is it good for?
