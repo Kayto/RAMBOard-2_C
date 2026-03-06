@@ -1,4 +1,0 @@
-.label Done=$1018
-.label str_to_poke=$820
-.label str_to_print=$810
-.label DirectLoop=$100c
