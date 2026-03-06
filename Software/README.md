@@ -4,10 +4,6 @@
 
 This section is a work in progress and hopes to detail some examples of "drive code", ideally using the RAMBOard. It's not the best guide as I am really a novice programmer. My days with the C64 were mainly spent with some BASIC type-ins and lots of gaming. I only had a datasette then, so the 1541 is relatively new to me.
 
-If you want to skip the below and see a more exciting example of "drive code" then look here. This example is not using any extra drive RAM. 
-
-**[Realtime filled vectors with calculations performed in drive](https://codebase64.org/doku.php?id=base:drivecalc_vectors)**
-
 ### Sources
 
 I have provided a summary page with some useful information and links to guides, books and articles about drive coding and the RAMBOard. Some of the information is not maintained any more, so where it seems to be at risk of disappearing I have archived it here. Original credits and sources will be linked.
